@@ -13,7 +13,7 @@ namespace Lab_5
             //Vars
             bool userCont = true;
             long factorialNum;
-            long userNumber;
+            int userNumber, copyUserNum;
 
             //Does the user want to continue loop
             while (userCont)
@@ -27,19 +27,21 @@ namespace Lab_5
                     Console.Write("Enter an Integer from 1 to 20: ");
                     userNumber = int.Parse(Console.ReadLine());
                 }
-
+                copyUserNum = userNumber;
                 factorialNum = userNumber;
 
                 //Prints Recursion method for the answer.
-                Console.WriteLine("{0} {1}", "Recursion", Recursion(userNumber));
+                Console.WriteLine("{0} {1}", "Recursion Method: ", Recursion(userNumber));
 
                 //Runs and Prints for loop for factorial. Deincrements userNumber not i.
                 for (int i = 1; i < userNumber; userNumber--)
                 {
                     //factorial
                     factorialNum *= (userNumber - 1);
-                    Console.WriteLine("The Factorial of {0} is {1}", userNumber, factorialNum);
+                    
                 }
+
+                Console.WriteLine("The Factorial of {0} is {1} with for loop.", copyUserNum, factorialNum);
 
                 //User input for continue. will return userCont true or false.
                 Console.WriteLine("Do You Wish To Continue");
